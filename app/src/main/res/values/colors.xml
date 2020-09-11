@@ -3,7 +3,7 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
-    <color name="themeColor">#57BC90</color>
+    <color name="themeColor">#F77F00</color>
 
     <!--normal colors-->
     <color name="darkTextColor">#020000</color>
@@ -11,10 +11,11 @@
 
     <!--colors for light mode-->
     <color name="contentTextColor">#020000</color>
-    <color name="register_bk_color">#CAEBF2</color>
+    <color name="register_bk_color">#F77F00</color>
     <color name="login_bk_color">#FFFF</color>
+    <color name="background_color">#FFFF</color>
     <color name="whiteTextColor">#fff</color>
-    <color name="primaryTextColor">#57BC90</color>
+    <color name="primaryTextColor">#FFE082</color>
     <color name="forgotPasswordPage">#52658F</color>
     <color name="typeEmailWhite">#FFFF</color>
 </resources>

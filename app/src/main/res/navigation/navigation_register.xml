@@ -9,5 +9,14 @@
         android:id="@+id/registerFragment2"
         android:name="com.example.final_project.screen.RegisterFragment"
         android:label="fragment_register"
-        tools:layout="@layout/fragment_register" />
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment2_to_successRegisterFragment"
+            app:destination="@id/successRegisterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/successRegisterFragment"
+        android:name="com.example.final_project.screen.SuccessRegisterFragment"
+        android:label="fragment_success_register"
+        tools:layout="@layout/fragment_success_register" />
 </navigation>

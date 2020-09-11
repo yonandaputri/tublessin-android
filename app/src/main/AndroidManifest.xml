@@ -3,6 +3,9 @@
     package="com.example.final_project">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -10,10 +13,20 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MaterialComponents.NoActionBar">
-        <activity android:name=".activity.ForgotPasswordActivity"></activity>
+        android:theme="@style/Theme.MaterialComponents.NoActionBar"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".activity.HistoryActivity"></activity>
+        <activity android:name=".activity.ChatActivity" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyB3zWC7KWfdw4GhSPWSsAMKZS7fqaZUwX0" />
+
+        <activity android:name=".activity.ProfileActivity" />
+        <activity android:name=".activity.MapsActivity" />
+        <activity android:name=".activity.ForgotPasswordActivity" />
         <activity android:name=".activity.RegisterActivity" />
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

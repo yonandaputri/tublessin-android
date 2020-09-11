@@ -1,8 +1,23 @@
 <resources>
+    <!-- APP NAME -->
     <string name="app_name">Tublessin</string>
-    <string name="login_email_hint">Email</string>
+
+    <!-- Input Text Hint -->
+    <string name="login_username_hint" color="#">Username</string>
     <string name="login_password_hint">Password</string>
+    <string name="register_firstname_hint">First Name</string>
+    <string name="register_lastname_hint">Last Name</string>
+    <string name="register_gender_hint">Gender</string>
+    <string name="register_email_hint">Email</string>
+    <string name="register_phonenumber_hint">Phone Number</string>
+    <string name="register_username_hint">Username</string>
+    <string name="register_password_hint">Password</string>
     <string name="email_forgot_password_hint">Type Your Email</string>
+
+    <!-- Button Text -->
+    <string name="login_button_text">LOGIN</string>
+    <string name="register_button_text">REGISTER</string>
+    <string name="done_button_text">DONE</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

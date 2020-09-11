@@ -2,14 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/loginFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/login_bk_color"
     android:focusableInTouchMode="true"
     android:gravity="center"
     android:layout_gravity="center"
-    tools:context=".screen.LoginFragment">
+    tools:context=".activity.LoginActivity">
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -47,19 +46,19 @@
             </RelativeLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputEmail"
+                android:id="@+id/textInputUsername"
                 style="@style/parent"
                 android:layout_marginTop="@dimen/loginViewsMargin"
                 app:boxCornerRadiusTopStart="10dp"
                 app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusBottomStart="10dp"
-                app:boxCornerRadiusBottomEnd="10dp"
-                android:hint="@string/login_email_hint">
+                app:boxCornerRadiusBottomEnd="10dp">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editTextEmail"
+                <EditText
+                    android:id="@+id/editTextUsername"
                     style="@style/modifiedEditText"
-                    android:inputType="textEmailAddress"
+                    android:hint="@string/login_username_hint"
+                    android:textColor="@android:color/black"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -72,10 +71,11 @@
                 app:boxCornerRadiusBottomEnd="10dp"
                 android:layout_marginTop="@dimen/loginViewsMargin">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <EditText
                     android:id="@+id/editTextPassword"
                     style="@style/modifiedEditText"
                     android:hint="@string/login_password_hint"
+                    android:textColor="@android:color/black"
                     android:inputType="textPassword"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -85,7 +85,8 @@
                 android:layout_gravity="end"
                 android:layout_marginTop="10dp"
                 android:text="Forgot Password?"
-                android:textColor="@color/primaryTextColor"
+                android:onClick="onForgotPassword"
+                android:textColor="@color/black"
                 android:textSize="@dimen/newsMoreTextSize" />
 
             <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
@@ -93,7 +94,8 @@
                 style="@style/loginButton"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/loginViewsMargin"
-                android:text="Login"
+                android:text="@string/login_button_text"
+                android:onClick="onLoginClick"
                 app:initialCornerAngle="27dp"
                 app:spinning_bar_color="#FFF"
                 app:spinning_bar_padding="6dp"
@@ -102,7 +104,7 @@
             <TextView
                 style="@style/parent"
                 android:layout_marginTop="@dimen/loginViewsMargin"
-                android:onClick="onLoginClick"
+                android:onClick="onRegisterClick"
                 android:text="New user? Register Now"
                 android:textAlignment="center"
                 android:textColor="@color/themeColor"
@@ -160,21 +162,5 @@
 
         </LinearLayout>
     </ScrollView>
-
-    <View
-        android:layout_width="11dp"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:background="@drawable/ic_side_bg" />
-    <ImageView
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_add_img"
-        android:layout_marginEnd="11dp"
-        android:layout_marginBottom="30dp"
-        android:onClick="onLoginClick" />
 
 </RelativeLayout>

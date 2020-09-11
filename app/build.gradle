@@ -71,6 +71,28 @@ dependencies {
     //animated button for login
     implementation 'br.com.simplepass:loading-button-android:1.14.0'
 
+    // Google
+    implementation 'com.google.android.gms:play-services-auth:18.1.0'
+
+    // Google MAPS
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+
+    // Auto Complete Place & location
+    implementation 'com.google.android.gms:play-services-places:17.0.0'
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+
+    // Maps Utils
+    implementation 'com.google.maps.android:android-maps-utils:2.0.3'
+
+    //permission
+    implementation 'com.karumi:dexter:6.2.1'
+
+    //library sharedpref
+    implementation 'com.pixplicity.easyprefs:library:1.9.0'
+
+    // meow bottom navigation
+    implementation 'com.etebarian:meow-bottom-navigation:1.0.0'
+
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
