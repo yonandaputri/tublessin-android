@@ -15,15 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.HistoryActivity"></activity>
-        <activity android:name=".activity.ChatActivity" />
+        <activity android:name=".activity.MenuActivity"></activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyB3zWC7KWfdw4GhSPWSsAMKZS7fqaZUwX0" />
 
-        <activity android:name=".activity.ProfileActivity" />
-        <activity android:name=".activity.MapsActivity" />
         <activity android:name=".activity.ForgotPasswordActivity" />
         <activity android:name=".activity.RegisterActivity" />
         <activity android:name=".activity.LoginActivity">
