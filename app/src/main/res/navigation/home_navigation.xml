@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_navigation"
+    app:startDestination="@id/mapsFragment">
+
+    <action
+        android:id="@+id/action_to_profile"
+        app:destination="@id/userProfileFragment" />
+    <action
+        android:id="@+id/action_to_chat"
+        app:destination="@id/chatFragment" />
+    <action
+        android:id="@+id/action_to_maps"
+        app:destination="@id/mapsFragment" />
+    <action
+        android:id="@+id/action_to_history"
+        app:destination="@id/historyFragment" />
+
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.final_project.screen.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" />
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.final_project.screen.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" />
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.example.final_project.screen.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" />
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.example.final_project.screen.UserProfileFragment"
+        android:label="fragment_user_profile"
+        tools:layout="@layout/fragment_user_profile" />
+</navigation>
