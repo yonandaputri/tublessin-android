@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home_navigation"
-    app:startDestination="@id/mapsFragment">
+    app:startDestination="@id/nearbyMontirFragment">
 
     <action
         android:id="@+id/action_to_profile"
@@ -38,4 +38,19 @@
         android:name="com.example.final_project.screen.UserProfileFragment"
         android:label="fragment_user_profile"
         tools:layout="@layout/fragment_user_profile" />
+    <fragment
+        android:id="@+id/nearbyMontirFragment"
+        android:name="com.example.final_project.domain.montir.fragment.NearbyMontirFragment"
+        android:label="fragment_nearby_montir"
+        tools:layout="@layout/fragment_nearby_montir" >
+        <action
+            android:id="@+id/action_nearbyMontirFragment_to_montirDetailFragment"
+            app:destination="@id/montirDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/montirDetailFragment"
+        android:name="com.example.final_project.domain.montir.fragment.MontirDetailFragment"
+        android:label="fragment_montir_detail"
+        tools:layout="@layout/fragment_montir_detail" />
+
 </navigation>

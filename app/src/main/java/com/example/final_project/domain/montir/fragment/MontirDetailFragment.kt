@@ -1,0 +1,103 @@
+package com.example.final_project.domain.montir.fragment
+
+import android.content.ContextWrapper
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
+import com.bumptech.glide.Glide
+import com.example.final_project.R
+import com.example.final_project.config.defaultHost
+import com.example.final_project.domain.montir.MontirViewModel
+import com.example.final_project.domain.transaction.TransactionViewModel
+import com.example.final_project.domain.transaction.model.Transaction
+import com.example.final_project.domain.transaction.model.TransactionLocation
+import com.example.final_project.domain.user.UserViewModel
+import com.pixplicity.easyprefs.library.Prefs
+import kotlinx.android.synthetic.main.fragment_montir_detail.*
+
+class MontirDetailFragment : Fragment() {
+    val montirViewModel by activityViewModels<MontirViewModel>()
+    val transactionViewModel by activityViewModels<TransactionViewModel>()
+    val userViewModel by activityViewModels<UserViewModel>()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(R.layout.fragment_montir_detail, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        preferenceBuilder()
+
+        val userId = Prefs.getString("id", "0")
+        var userFirstname = ""
+        var userLatitude = 0.0
+        var userLongitude = 0.0
+        userViewModel.requestGetUserDetail(userId)
+        userViewModel.getUserAccountInfo().observe(viewLifecycleOwner, Observer {
+            userFirstname = it.result.profile.firstname
+            userLatitude = it.result.profile.location.latitude
+            userLongitude = it.result.profile.location.longitude
+        })
+
+        val montirId = Prefs.getString("selectedMontirId", "0")
+        var montirFirstname = ""
+        montirViewModel.requestMontirDetailById(montirId)
+        montirViewModel.getMontirDetail().observe(viewLifecycleOwner, Observer {
+            Glide.with(this)
+                .load("${defaultHost()}montir/file/image/${it.result.profile.imageURL}")
+                .circleCrop()
+                .into(photo_montir_detail)
+
+            firstname_montir_detail.text = it.result.profile.firstname
+            lastname_montir_detail.text = it.result.profile.lastname
+            phone_montir_detail.text = it.result.profile.phone_number
+
+            montirFirstname = it.result.profile.firstname
+        })
+
+        // Button untuk post new transaction ke backend
+        order_button_montir_detail.setOnClickListener {
+            transactionViewModel.PostNewTransaction(
+                Transaction(
+                    id_montir = montirId.toString(),
+                    id_user = userId,
+                    montir_firstname = montirFirstname,
+                    user_firstname = userFirstname,
+                    location = TransactionLocation(
+                        latitude = userLatitude, longitude = userLongitude
+                    )
+                )
+            )
+        }
+
+        transactionViewModel.transactionList().observe(viewLifecycleOwner, Observer {
+            println("=========================================================")
+            println(it.Message)
+            println(it.Code)
+            println(it.Status)
+            println(it.Results.result.id)
+            println(it.Results.result.id_user)
+            println("=========================================================")
+        })
+    }
+
+    private fun preferenceBuilder() {
+        Prefs.Builder()
+            .setContext(this.activity)
+            .setMode(ContextWrapper.MODE_PRIVATE)
+            .setPrefsName(this.activity?.packageName)
+            .setUseDefaultSharedPreference(true)
+            .build()
+    }
+}
