@@ -72,6 +72,7 @@ class MontirDetailFragment : Fragment() {
             firstname_montir_detail.text = it.result.profile.firstname
             lastname_montir_detail.text = it.result.profile.lastname
             phone_montir_detail.text = it.result.profile.phone_number
+            rating_montir_detail.text = Prefs.getString("montirAverageRating", "5.0")
 
             montirFirstname = it.result.profile.firstname
         })

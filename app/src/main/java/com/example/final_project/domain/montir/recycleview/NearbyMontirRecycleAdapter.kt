@@ -33,8 +33,9 @@ class NearbyMontirRecycleAdapter(
         holder.lastname.text = listMontir[position].lastname
         holder.status.text = listMontir[position].status.status_activity
 
-        holder.rating.text = listMontir[position].rating.average_rating.toFloat().toBigDecimal()
+        val formatedRating = listMontir[position].rating.average_rating.toFloat().toBigDecimal()
             .setScale(1, RoundingMode.UP).toString()
+        holder.rating.text = formatedRating
 
         val number = listMontir[position].distance.toFloat() / 1000
         val rounded = number.toBigDecimal().setScale(1, RoundingMode.UP).toDouble()
@@ -53,6 +54,7 @@ class NearbyMontirRecycleAdapter(
 
         holder.itemView.setOnClickListener {
             Prefs.putString("selectedMontirId", listMontir[position].id.toString())
+            Prefs.putString("montirAverageRating",formatedRating)
             Navigation.findNavController(it)
                 .navigate(R.id.action_nearbyMontirFragment_to_montirDetailFragment)
         }

@@ -154,9 +154,10 @@ class MapsFragment : Fragment(), View.OnClickListener {
                     userId,
                     UserLocation(map.myLocation.latitude, map.myLocation.longitude)
                 )
+                Prefs.putDouble("userLocationLatitude", map.myLocation.latitude)
+                Prefs.putDouble("userLocationLongitude", map.myLocation.longitude)
                 handler.postDelayed(this, 5000)
             }
-
         }
         handler.postDelayed(runnable, 1000)
     }
