@@ -24,6 +24,8 @@ class LoginActivity : AppCompatActivity() {
             .setPrefsName(packageName).setUseDefaultSharedPreference(true).build()
     }
 
+
+
     fun onLoginClick(view: View) {
         if (editTextUsername.text.toString() == "" || editTextPassword.text.toString() == "") {
             Toast.makeText(
@@ -43,6 +45,7 @@ class LoginActivity : AppCompatActivity() {
                     println("succes login")
 
                     Prefs.putString("id", it.account.id.toString())
+                    Prefs.putString("token", it.token)
                     startActivity(Intent(this, HomeActivity::class.java))
                 }
             })

@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 
 fun defaultHost():String{
-    return "http://192.168.43.46:8080/"
+    return "http://34.101.198.49:8084/"
 }
 
 

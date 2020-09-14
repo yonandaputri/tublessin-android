@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "203858838874",
+    "firebase_url": "https://tublessin-user-android.firebaseio.com",
+    "project_id": "tublessin-user-android",
+    "storage_bucket": "tublessin-user-android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:203858838874:android:7efaaf39202f44b42e9f63",
+        "android_client_info": {
+          "package_name": "com.example.final_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "203858838874-ji4pkrnu3q1ifv2l258calm24opcadln.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8RU6KWdEWlRfHv7lSkeozLxRBEuo66Bg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "203858838874-ji4pkrnu3q1ifv2l258calm24opcadln.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

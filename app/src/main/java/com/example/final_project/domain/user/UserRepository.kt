@@ -1,6 +1,7 @@
 package com.example.final_project.domain.user
 
 import androidx.lifecycle.MutableLiveData
+import com.pixplicity.easyprefs.library.Prefs
 import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.Callback
@@ -9,6 +10,8 @@ import retrofit2.Response
 class UserRepository(val userAPI: UserAPI) {
     var userAccountInfo = MutableLiveData<UserResponseMessage>()
     var userLocationInfo = MutableLiveData<UserLocation>()
+    val token = "Bearer ${Prefs.getString("token", "0")}"
+
 
     fun registerUser(userAccount: UserAccount) {
         userAPI.registerUser(userAccount).enqueue(object : Callback<UserResponseMessage> {
@@ -38,7 +41,7 @@ class UserRepository(val userAPI: UserAPI) {
     }
 
     fun requestGetUserDetail(id: String) {
-        userAPI.getUserByID(id).enqueue(object : Callback<UserResponseMessage> {
+        userAPI.getUserByID(token, id).enqueue(object : Callback<UserResponseMessage> {
             override fun onFailure(call: Call<UserResponseMessage>, t: Throwable) {
                 println("REQUEST DETAIL USER FAILED")
                 t.printStackTrace()
@@ -64,7 +67,7 @@ class UserRepository(val userAPI: UserAPI) {
     }
 
     fun uploadUserProfilePicture(id: String, image: MultipartBody.Part) {
-        userAPI.uploadUserProfilePicture(image, id).enqueue(object : Callback<UserResponseMessage> {
+        userAPI.uploadUserProfilePicture(token, image, id).enqueue(object : Callback<UserResponseMessage> {
             override fun onFailure(call: Call<UserResponseMessage>, t: Throwable) {
                 println("UPLOAD PICTURE USER FAILED")
                 t.printStackTrace()
@@ -89,7 +92,7 @@ class UserRepository(val userAPI: UserAPI) {
     }
 
     fun updateUserLocation(id: String, userLocation: UserLocation) {
-        userAPI.updateUserLocationByID(id, userLocation).enqueue(object : Callback<UserResponseMessage> {
+        userAPI.updateUserLocationByID(token, id, userLocation).enqueue(object : Callback<UserResponseMessage> {
             override fun onFailure(call: Call<UserResponseMessage>, t: Throwable) {
                 println("UPDATE LOCATION USER FAILED")
                 t.printStackTrace()
@@ -107,7 +110,7 @@ class UserRepository(val userAPI: UserAPI) {
     }
 
     fun updateUserProfile(id: String, userProfile: UserProfile) {
-        userAPI.updateUserProfileByID(id, userProfile).enqueue(object : Callback<UserResponseMessage> {
+        userAPI.updateUserProfileByID(token, id, userProfile).enqueue(object : Callback<UserResponseMessage> {
             override fun onFailure(call: Call<UserResponseMessage>, t: Throwable) {
                 println("UPDATE PROFILE USER FAILED")
                 t.printStackTrace()

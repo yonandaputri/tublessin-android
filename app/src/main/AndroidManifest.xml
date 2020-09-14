@@ -34,10 +34,6 @@
             android:value="@string/google_maps_key" />
 
         <activity android:name=".activity.HomeActivity" />
-        <activity android:name=".activity.HistoryActivity" />
-        <activity android:name=".activity.ChatActivity" />
-        <activity android:name=".activity.ProfileActivity" />
-        <activity android:name=".activity.MapsActivity" />
         <activity android:name=".activity.ForgotPasswordActivity" />
         <activity android:name=".activity.RegisterActivity" />
         <activity android:name=".activity.LoginActivity">

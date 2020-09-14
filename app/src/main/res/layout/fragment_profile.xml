@@ -55,6 +55,15 @@
                         android:layout_marginBottom="-50dp"
                         app:srcCompat="@drawable/ic_camera" />
                 </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/logoutClicked"
+                    android:layout_width="52dp"
+                    android:layout_height="84dp"
+                    android:src="@drawable/ic_baseline_exit_to_app_24"
+                    android:layout_gravity="end"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
             </com.google.android.material.card.MaterialCardView>
 
             <TextView
