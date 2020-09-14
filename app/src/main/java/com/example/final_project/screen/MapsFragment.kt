@@ -63,9 +63,9 @@ class MapsFragment : Fragment(), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        navController = Navigation.findNavController(view)
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(callback)
+        navController = Navigation.findNavController(view)
         getCurrentLocation.setOnClickListener(this)
         findNearbyButton.setOnClickListener(this)
         Prefs.Builder()
