@@ -8,6 +8,8 @@ import android.widget.TextView
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.model.GlideUrl
+import com.bumptech.glide.load.model.LazyHeaders
 import com.example.final_project.R
 import com.example.final_project.config.defaultHost
 import com.example.final_project.domain.montir.model.NearbyMontirProfile
@@ -38,8 +40,15 @@ class NearbyMontirRecycleAdapter(
         val rounded = number.toBigDecimal().setScale(1, RoundingMode.UP).toDouble()
         holder.distance.text = "${rounded} Km"
 
+        val url = "${defaultHost()}montir/file/image/${listMontir[position].imageUrl}"
+        val glideUrl = GlideUrl(
+            url,
+            LazyHeaders.Builder()
+                .addHeader("Authorization", "Bearer ${Prefs.getString("token", "0")}")
+                .build()
+        )
         Glide.with(activity)
-            .load("${defaultHost()}user/file/image/${listMontir[position].imageUrl}").circleCrop()
+            .load(glideUrl).circleCrop()
             .into(holder.photo)
 
         holder.itemView.setOnClickListener {

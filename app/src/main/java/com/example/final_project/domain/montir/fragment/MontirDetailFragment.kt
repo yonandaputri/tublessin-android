@@ -9,6 +9,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.model.GlideUrl
+import com.bumptech.glide.load.model.LazyHeaders
 import com.example.final_project.R
 import com.example.final_project.config.defaultHost
 import com.example.final_project.domain.montir.MontirViewModel
@@ -54,8 +56,16 @@ class MontirDetailFragment : Fragment() {
         var montirFirstname = ""
         montirViewModel.requestMontirDetailById(montirId)
         montirViewModel.getMontirDetail().observe(viewLifecycleOwner, Observer {
+
+            val url = "${defaultHost()}montir/file/image/${it.result.profile.imageURL}"
+            val glideUrl = GlideUrl(
+                url,
+                LazyHeaders.Builder()
+                    .addHeader("Authorization", "Bearer ${Prefs.getString("token", "0")}")
+                    .build()
+            )
             Glide.with(this)
-                .load("${defaultHost()}montir/file/image/${it.result.profile.imageURL}")
+                .load(glideUrl)
                 .circleCrop()
                 .into(photo_montir_detail)
 

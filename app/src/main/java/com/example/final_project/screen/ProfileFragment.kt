@@ -65,7 +65,6 @@ class ProfileFragment : Fragment(), View.OnClickListener {
             email_profile_view.text = it.result.profile.email
 
             val url = "${defaultHost()}user/file/image/${it.result.profile.imageURL}"
-
             val glideUrl = GlideUrl(
                 url,
                 LazyHeaders.Builder()
@@ -118,7 +117,7 @@ class ProfileFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        when(v) {
+        when (v) {
             logoutClicked -> {
                 activity?.finish()
             }
