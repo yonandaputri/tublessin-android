@@ -41,7 +41,9 @@ class NearbyMontirFragment : Fragment() {
 
         list_nearby_recycle_view.layoutManager = LinearLayoutManager(activity)
         montirViewModel.getNearbyMontir().observe(viewLifecycleOwner, Observer {
-            list_nearby_recycle_view.adapter = NearbyMontirRecycleAdapter(it.list, this)
+            if (!it.list.isNullOrEmpty()) {
+                list_nearby_recycle_view.adapter = NearbyMontirRecycleAdapter(it.list, this)
+            }
         })
     }
 

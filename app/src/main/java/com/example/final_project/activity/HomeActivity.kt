@@ -31,18 +31,15 @@ class HomeActivity : AppCompatActivity() {
         bottom_navigation.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.home -> {
-                    navController.navigate(R.id.action_to_maps)
-//                    this.fragmentManager.popBackStack()
+                    navController.navigate(R.id.action_to_maps) // masuk maps
                     true
                 }
                 R.id.history -> {
                     navController.navigate(R.id.action_to_history)
-//                    this.fragmentManager.popBackStack()
                     true
                 }
                 R.id.profile -> {
                     navController.navigate(R.id.action_to_profile)
-//                    this.fragmentManager.popBackStack()
                     true
                 }
                 else -> {
@@ -65,14 +62,14 @@ class HomeActivity : AppCompatActivity() {
                     )
                 ) {
                     // Orderan Selesai
-                    findNearbyButton.isEnabled = true // nyalain tombol search
+                    findNearbyButton?.isEnabled = true // nyalain tombol search
                     Prefs.putBoolean("statusOrderan", false) // ubah status orderan jadi false
                     Prefs.putString("finishedOrderMontirId", it.Results.results[0].id_montir)
                     navController.navigate(R.id.action_global_giveMontirRatingFragment) // pindah ke fragment rating
-                } else if(it.Results.results[0].status == "On Process"){
+                } else if (it.Results.results[0].status == "On Process") {
                     // Ada orderan yang sedang berjalan
                     Prefs.putBoolean("statusOrderan", true) // status orderan true
-                    findNearbyButton.isEnabled = false // matiin tombol search
+                    findNearbyButton?.isEnabled = false// matiin tombol search
                 }
             }
         })
