@@ -76,6 +76,7 @@ class GiveMontirRatingFragment : Fragment() {
     private fun fiveStarButton() {
         oneStar_review_fragment.setOnClickListener {
             totalStar = 1
+            rating_message_review_fragment.text = "Aku tuh gabisa diginiin"
             fill_oneStar_review_fragment.isVisible = true
             fill_twoStar_review_fragment.isVisible = false
             fill_threeStar_review_fragment.isVisible = false
@@ -84,6 +85,7 @@ class GiveMontirRatingFragment : Fragment() {
         }
         twoStar_review_fragment.setOnClickListener {
             totalStar = 2
+            rating_message_review_fragment.text = "Yaa lumayan dari pada lu manyun"
             fill_oneStar_review_fragment.isVisible = true
             fill_twoStar_review_fragment.isVisible = true
             fill_threeStar_review_fragment.isVisible = false
@@ -92,6 +94,7 @@ class GiveMontirRatingFragment : Fragment() {
         }
         threeStar_review_fragment.setOnClickListener {
             totalStar = 3
+            rating_message_review_fragment.text = "Mantabeee!"
             fill_oneStar_review_fragment.isVisible = true
             fill_twoStar_review_fragment.isVisible = true
             fill_threeStar_review_fragment.isVisible = true
@@ -100,6 +103,7 @@ class GiveMontirRatingFragment : Fragment() {
         }
         fourStar_review_fragment.setOnClickListener {
             totalStar = 4
+            rating_message_review_fragment.text = "GGWP Sangat memuaskannn"
             fill_oneStar_review_fragment.isVisible = true
             fill_twoStar_review_fragment.isVisible = true
             fill_threeStar_review_fragment.isVisible = true
@@ -108,6 +112,7 @@ class GiveMontirRatingFragment : Fragment() {
         }
         fiveStar_review_fragment.setOnClickListener {
             totalStar = 5
+            rating_message_review_fragment.text = "Pelayanan memuaskan!! Jadi pengen bocor lagi"
             fill_oneStar_review_fragment.isVisible = true
             fill_twoStar_review_fragment.isVisible = true
             fill_threeStar_review_fragment.isVisible = true
