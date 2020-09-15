@@ -33,9 +33,11 @@ class NearbyMontirFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         preferenceBuilder()
 
-        // <----- Ini Masih di HARDCODE ----->
         // Seharusnya pake User Location yang asli
-        montirViewModel.requestNearbyMontir("-6.181389", "106.841987")
+        montirViewModel.requestNearbyMontir(
+            Prefs.getDouble("userLocationLatitude", 0.0).toString(),
+            Prefs.getDouble("userLocationLongitude", 0.0).toString()
+        )
 
         list_nearby_recycle_view.layoutManager = LinearLayoutManager(activity)
         montirViewModel.getNearbyMontir().observe(viewLifecycleOwner, Observer {
@@ -43,7 +45,7 @@ class NearbyMontirFragment : Fragment() {
         })
     }
 
-    private fun preferenceBuilder(){
+    private fun preferenceBuilder() {
         Prefs.Builder()
             .setContext(this.activity)
             .setMode(ContextWrapper.MODE_PRIVATE)

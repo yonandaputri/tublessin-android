@@ -8,12 +8,20 @@ import retrofit2.http.*
 interface TransactionAPI {
     @POST("transaction/add")
     fun PostNewTransaction(
-        @Body transaction: Transaction
+        @Body transaction: Transaction, @Header("Authorization") token: String
     ): Call<TransactionResponeMessage>
 
     @GET("transaction/history/get")
-    fun GetUserTransactionList(@Query("userid") userid: String): Call<TransactionResponeMessage>
+    fun GetUserTransactionList(
+        @Query("userid") userid: String,
+        @Query("montirid") montirid: String,
+        @Header("Authorization") token: String
+
+    ): Call<TransactionResponeMessage>
 
     @POST("transaction/update/status/{id}")
-    fun UpdateStatusTransaction(@Path("id") id: String): Call<TransactionResponeMessage>
+    fun UpdateStatusTransaction(
+        @Path("id") id: String,
+        @Header("Authorization") token: String
+    ): Call<TransactionResponeMessage>
 }
