@@ -62,14 +62,12 @@ class HomeActivity : AppCompatActivity() {
                     )
                 ) {
                     // Orderan Selesai
-                    findNearbyButton?.isEnabled = true // nyalain tombol search
                     Prefs.putBoolean("statusOrderan", false) // ubah status orderan jadi false
                     Prefs.putString("finishedOrderMontirId", it.Results.results[0].id_montir)
                     navController.navigate(R.id.action_global_giveMontirRatingFragment) // pindah ke fragment rating
                 } else if (it.Results.results[0].status == "On Process") {
                     // Ada orderan yang sedang berjalan
                     Prefs.putBoolean("statusOrderan", true) // status orderan true
-                    findNearbyButton?.isEnabled = false// matiin tombol search
                 }
             }
         })

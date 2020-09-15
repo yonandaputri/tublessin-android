@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout4"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E1E1E1"
+    android:background="#FFFFFF"
     android:focusableInTouchMode="true"
     tools:context=".domain.transaction.fragment.GiveMontirRatingFragment">
 
@@ -174,7 +174,8 @@
         android:id="@+id/button_submit_review_fragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#FF9800"
         android:text="Submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

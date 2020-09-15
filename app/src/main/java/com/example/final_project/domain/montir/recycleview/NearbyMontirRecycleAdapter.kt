@@ -54,7 +54,7 @@ class NearbyMontirRecycleAdapter(
 
         holder.itemView.setOnClickListener {
             Prefs.putString("selectedMontirId", listMontir[position].id.toString())
-            Prefs.putString("montirAverageRating",formatedRating)
+            Prefs.putString("montirAverageRating", formatedRating)
             Navigation.findNavController(it)
                 .navigate(R.id.action_nearbyMontirFragment_to_montirDetailFragment)
         }

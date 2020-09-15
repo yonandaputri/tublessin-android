@@ -76,6 +76,7 @@ class MapsFragment : Fragment(), View.OnClickListener {
             .build()
 
         userId = Prefs.getString("id", "0")
+        findNearbyButton?.isEnabled = !Prefs.getBoolean("statusOrderan",false)
     }
 
     override fun onRequestPermissionsResult(

@@ -81,6 +81,8 @@ class MontirDetailFragment : Fragment() {
 
         // Button untuk post new transaction ke backend
         order_button_montir_detail.setOnClickListener {
+            Prefs.putBoolean("statusOrderan", true) // status orderan true
+            Navigation.findNavController(it).navigate(R.id.action_montirDetailFragment_pop)
             Navigation.findNavController(it).navigate(R.id.action_to_montir_on_the_way)
             transactionViewModel.PostNewTransaction(
                 Transaction(
