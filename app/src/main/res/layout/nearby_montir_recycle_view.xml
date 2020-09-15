@@ -55,10 +55,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="20dp"
             android:text="2.3 Km"
             android:textColor="#F1F1F1"
-            android:textSize="30sp"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -89,7 +89,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
-            android:layout_marginEnd="38dp"
+            android:layout_marginEnd="20dp"
             android:text="Standby"
             android:textColor="#4CAF50"
             app:layout_constraintEnd_toEndOf="parent"

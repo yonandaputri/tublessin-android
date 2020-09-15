@@ -51,7 +51,7 @@ class GiveMontirRatingFragment : Fragment() {
                 montirId.toString(), MontirRating(
                     rating = totalStar,
                     rater_id = Prefs.getString("id", "0"),
-                    review = "bagus Sekaliiiiii" // jangan di hardcode, bikin box ulasan
+                    review = review_montir_text.text.toString()
                 )
             )
             Navigation.findNavController(it).navigate(R.id.action_giveMontirRatingFragment_pop)

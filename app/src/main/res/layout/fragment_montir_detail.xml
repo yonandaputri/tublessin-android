@@ -8,102 +8,99 @@
     android:background="@android:color/white"
     tools:context=".domain.montir.fragment.MontirDetailFragment">
 
-    <ImageView
-        android:id="@+id/photo_montir_detail"
-        android:layout_width="160dp"
-        android:layout_height="166dp"
-        android:layout_marginTop="49dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/phone_montir_detail"
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:id="@+id/scrollViewRating"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="0898 227 9889"
-        android:textColor="#FF9800"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/order_button_montir_detail"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/themeColor"
-        android:text="Order"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phone_montir_detail"
-        app:layout_constraintVertical_bias="0.23000002" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/photo_montir_detail">
-
-        <ImageView
-            android:id="@+id/imageView7"
-            android:layout_width="32dp"
-            android:layout_height="34dp"
-            android:src="@drawable/ic_baseline_star_24"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/rating_montir_detail"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="4.6"
-            android:textSize="24sp"
-            app:layout_constraintStart_toEndOf="@+id/imageView7"
-            app:layout_constraintTop_toTopOf="parent"
-            android:textColor="@android:color/black"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:gravity="center"
+            android:orientation="vertical">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+            <ImageView
+                android:id="@+id/photo_montir_detail"
+                android:layout_width="160dp"
+                android:layout_height="166dp"
+                android:layout_marginTop="49dp"
+                tools:src="@tools:sample/avatars" />
 
-        <TextView
-            android:id="@+id/firstname_montir_detail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Garin"
-            android:textAlignment="textStart"
-            android:textSize="24sp"
-            android:textColor="@android:color/black"
-            tools:ignore="MissingConstraints" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
 
-        <TextView
-            android:id="@+id/lastname_montir_detail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="Prakoso"
-            android:textSize="24sp"
-            app:layout_constraintStart_toEndOf="@+id/firstname_montir_detail"
-            tools:layout_editor_absoluteY="0dp"
-            android:textColor="@android:color/black"
-            tools:ignore="MissingConstraints" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="32dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_baseline_star_24"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/rating_montir_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4.6"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    app:layout_constraintStart_toEndOf="@+id/imageView7"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:id="@+id/firstname_montir_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Garin"
+                    android:textAlignment="textStart"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/lastname_montir_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Prakoso"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    app:layout_constraintStart_toEndOf="@+id/firstname_montir_detail"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="0dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/phone_montir_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="0898 227 9889"
+                android:textColor="#FF9800"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/order_button_montir_detail"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                android:layout_marginBottom="50dp"
+                android:backgroundTint="@color/themeColor"
+                android:text="Order" />
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

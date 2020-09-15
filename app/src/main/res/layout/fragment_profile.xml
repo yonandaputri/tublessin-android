@@ -58,9 +58,11 @@
 
                 <ImageView
                     android:id="@+id/logoutClicked"
-                    android:layout_width="52dp"
-                    android:layout_height="84dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:src="@drawable/ic_baseline_exit_to_app_24"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="10dp"
                     android:layout_gravity="end"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -96,9 +98,10 @@
                     android:id="@+id/first_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="firstname "
+                    android:text="firstname"
+                    android:layout_marginEnd="5dp"
                     android:textColor="@color/black"
-                    android:textSize="25sp" />
+                    android:textSize="@dimen/profileUserText" />
 
                 <TextView
                     android:id="@+id/last_name"
@@ -106,7 +109,7 @@
                     android:layout_height="wrap_content"
                     android:text="lastname"
                     android:textColor="@color/black"
-                    android:textSize="25sp" />
+                    android:textSize="@dimen/profileUserText" />
 
             </LinearLayout>
 
@@ -131,7 +134,7 @@
                     android:layout_height="wrap_content"
                     android:text="08982279019"
                     android:textColor="@color/black"
-                    android:textSize="25sp" />
+                    android:textSize="@dimen/profileUserText" />
 
             </LinearLayout>
 
@@ -157,7 +160,7 @@
                     android:layout_height="wrap_content"
                     android:text="sampel_email@gmail.com"
                     android:textColor="#1C1C1C"
-                    android:textSize="25sp" />
+                    android:textSize="@dimen/profileUserText" />
 
             </LinearLayout>
 

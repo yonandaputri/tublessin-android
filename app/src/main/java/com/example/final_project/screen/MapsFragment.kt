@@ -66,7 +66,6 @@ class MapsFragment : Fragment(), View.OnClickListener {
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(callback)
         navController = Navigation.findNavController(view)
-        getCurrentLocation.setOnClickListener(this)
         findNearbyButton.setOnClickListener(this)
         Prefs.Builder()
             .setContext(this.activity)
@@ -123,19 +122,6 @@ class MapsFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         when (v) {
-            getCurrentLocation -> {
-                map.clear()
-                val userPosition = LatLng(map.myLocation.latitude, map.myLocation.longitude)
-                map.addMarker(
-                    MarkerOptions().position(userPosition).title("Marker in User Position")
-                )
-                map.moveCamera(CameraUpdateFactory.newLatLng(userPosition))
-
-                userViewModel.updateUserLocation(
-                    userId,
-                    UserLocation(map.myLocation.latitude, map.myLocation.longitude)
-                )
-            }
             findNearbyButton -> {
                 navController.navigate(R.id.action_mapsFragment_to_nearbyMontirFragment)
             }
