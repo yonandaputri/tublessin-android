@@ -22,9 +22,13 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         Prefs.Builder().setContext(this).setMode(ContextWrapper.MODE_PRIVATE)
             .setPrefsName(packageName).setUseDefaultSharedPreference(true).build()
+
+        if (Prefs.getString("id", "0") != "0" &&
+            Prefs.getString("token", "0") != "0"
+        ) {
+            startActivity(Intent(this, HomeActivity::class.java))
+        }
     }
-
-
 
     fun onLoginClick(view: View) {
         if (editTextUsername.text.toString() == "" || editTextPassword.text.toString() == "") {

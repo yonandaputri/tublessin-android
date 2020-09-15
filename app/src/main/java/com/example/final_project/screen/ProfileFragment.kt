@@ -59,7 +59,7 @@ class ProfileFragment : Fragment(), View.OnClickListener {
         userId = Prefs.getString("id", "0")
         userViewModel.requestGetUserDetail(userId)
         userViewModel.getUserAccountInfo().observe(viewLifecycleOwner, Observer {
-            first_name.text = it.result.profile.firstname
+            first_name.text = "${it.result.profile.firstname} "
             last_name.text = it.result.profile.lastname
             phone_number.text = it.result.profile.phone_number
             email_profile_view.text = it.result.profile.email
