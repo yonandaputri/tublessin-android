@@ -10,7 +10,7 @@ import com.example.final_project.R
 import kotlinx.android.synthetic.main.fragment_montir_on_the_way.*
 
 class MontirOnTheWayFragment : Fragment() {
- override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
 

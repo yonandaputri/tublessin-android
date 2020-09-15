@@ -40,6 +40,18 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="50dp"
                 android:src="@drawable/order_comfirmed" />
+
+            <Button
+                android:id="@+id/back_button_fragment_otw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="#FF9800"
+                android:text="Back"
+                app:iconTint="#F44336"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
