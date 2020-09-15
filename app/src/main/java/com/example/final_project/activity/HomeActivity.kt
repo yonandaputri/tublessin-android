@@ -53,20 +53,30 @@ class HomeActivity : AppCompatActivity() {
         }
 
         transactionViewModel.transactionList().observe(this, Observer {
-            if(!it.Results.results.isNullOrEmpty()){
+            if (!it.Results.results.isNullOrEmpty()) {
                 println(it.Results.results[0].status)
-                if (it.Results.results[0].status != "On Process"){
-                    findNearbyButton.isEnabled = true
-                    println("Orderan sudah selesai")
-                }else{
-                    println("Orderan sedang berjalan")
-                    findNearbyButton.isEnabled = false
+                // di cek jika status orderan nya bukan "On Process" alias sudah selesai dan
+                // statusOrderan nya true yang artinya sebelumnya lagi sedang ada orderan
+                // Prefs.getBoolean("statusOrderan", false) <- dilakukan biar pas awal login ngga langsung
+                // munculin fragment review
+                if (it.Results.results[0].status != "On Process" && Prefs.getBoolean(
+                        "statusOrderan",
+                        false
+                    )
+                ) {
+                    // Orderan Selesai
+                    findNearbyButton.isEnabled = true // nyalain tombol search
+                    Prefs.putBoolean("statusOrderan", false) // ubah status orderan jadi false
+                    Prefs.putString("finishedOrderMontirId", it.Results.results[0].id_montir)
+                    navController.navigate(R.id.action_global_giveMontirRatingFragment) // pindah ke fragment rating
+                } else if(it.Results.results[0].status == "On Process"){
+                    // Ada orderan yang sedang berjalan
+                    Prefs.putBoolean("statusOrderan", true) // status orderan true
+                    findNearbyButton.isEnabled = false // matiin tombol search
                 }
             }
         })
     }
-
-
 
     override fun onResume() {
         super.onResume()

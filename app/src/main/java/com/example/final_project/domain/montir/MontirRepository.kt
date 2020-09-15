@@ -1,6 +1,7 @@
 package com.example.final_project.domain.montir
 
 import androidx.lifecycle.MutableLiveData
+import com.example.final_project.domain.montir.model.MontirRating
 import com.example.final_project.domain.montir.model.MontirResponeMessage
 import com.example.final_project.domain.montir.model.NearbyMontirResponeMessage
 import com.pixplicity.easyprefs.library.Prefs
@@ -13,8 +14,32 @@ class MontirRepository(val montirAPI: MontirAPI) {
     var montirDetail = MutableLiveData<MontirResponeMessage>()
     val token = "Bearer ${Prefs.getString("token", "0")}"
 
-    fun getMontirDetailById(id:String){
-        montirAPI.getMontirDetailById(token, id).enqueue(object :Callback<MontirResponeMessage>{
+    fun postNewMontirRating(id: String, montirRating: MontirRating) {
+        montirAPI.postNewMontirRating(token, id, montirRating)
+            .enqueue(object : Callback<MontirResponeMessage> {
+                override fun onResponse(
+                    call: Call<MontirResponeMessage>,
+                    response: Response<MontirResponeMessage>
+                ) {
+                    if (response.code() == 200) {
+                        println("POST RATING BY ID SUCCESS")
+                        println(response.code())
+                        println(response.body())
+                        montirDetail.value = response.body()
+                    }
+                    println(response.code())
+                    println(response.body())
+                }
+
+                override fun onFailure(call: Call<MontirResponeMessage>, t: Throwable) {
+                    println("POST RATING BY ID FAILED")
+                    t.printStackTrace()
+                }
+            })
+    }
+
+    fun getMontirDetailById(id: String) {
+        montirAPI.getMontirDetailById(token, id).enqueue(object : Callback<MontirResponeMessage> {
             override fun onResponse(
                 call: Call<MontirResponeMessage>,
                 response: Response<MontirResponeMessage>

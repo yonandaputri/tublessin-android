@@ -36,7 +36,7 @@
         android:id="@+id/mapsFragment"
         android:name="com.example.final_project.screen.MapsFragment"
         android:label="fragment_maps"
-        tools:layout="@layout/fragment_maps" >
+        tools:layout="@layout/fragment_maps">
         <action
             android:id="@+id/action_mapsFragment_to_nearbyMontirFragment"
             app:destination="@id/nearbyMontirFragment" />
@@ -45,7 +45,7 @@
         android:id="@+id/nearbyMontirFragment"
         android:name="com.example.final_project.domain.montir.fragment.NearbyMontirFragment"
         android:label="fragment_nearby_montir"
-        tools:layout="@layout/fragment_nearby_montir" >
+        tools:layout="@layout/fragment_nearby_montir">
         <action
             android:id="@+id/action_nearbyMontirFragment_to_montirDetailFragment"
             app:destination="@id/montirDetailFragment" />
@@ -65,5 +65,18 @@
         android:name="com.example.final_project.domain.transaction.fragment.MontirOnTheWayFragment"
         android:label="fragment_montir_on_the_way"
         tools:layout="@layout/fragment_montir_on_the_way" />
+    <fragment
+        android:id="@+id/giveMontirRatingFragment"
+        android:name="com.example.final_project.domain.transaction.fragment.GiveMontirRatingFragment"
+        android:label="fragment_give_montir_rating"
+        tools:layout="@layout/fragment_give_montir_rating" >
+        <action
+            android:id="@+id/action_giveMontirRatingFragment_pop"
+            app:popUpTo="@id/giveMontirRatingFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_giveMontirRatingFragment"
+        app:destination="@id/giveMontirRatingFragment" />
 
 </navigation>
