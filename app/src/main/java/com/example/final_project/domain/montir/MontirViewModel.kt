@@ -3,6 +3,7 @@ package com.example.final_project.domain.montir
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.example.final_project.config.RetrofitBuilder
+import com.example.final_project.domain.montir.model.MontirRating
 import com.example.final_project.domain.montir.model.MontirResponeMessage
 import com.example.final_project.domain.montir.model.NearbyMontirResponeMessage
 
@@ -16,6 +17,9 @@ class MontirViewModel : ViewModel() {
 
     fun requestNearbyMontir(lat: String, long: String) =
         montirRepository.findNearbyMontir(lat, long)
+
+    fun postNewMontirRating(id: String, montirRating: MontirRating) =
+        montirRepository.postNewMontirRating(id, montirRating)
 
     fun getMontirDetail() = montirRepository.montirDetail as LiveData<MontirResponeMessage>
     fun requestMontirDetailById(id: String) = montirRepository.getMontirDetailById(id)
