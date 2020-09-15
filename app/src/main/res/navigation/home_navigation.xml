@@ -10,9 +10,6 @@
         app:destination="@id/montirOnTheWayFragment" />
 
     <action
-        android:id="@+id/action_to_chat"
-        app:destination="@id/chatFragment" />
-    <action
         android:id="@+id/action_to_maps"
         app:destination="@id/mapsFragment" />
     <action
@@ -23,13 +20,8 @@
         app:destination="@id/profileFragment" />
 
     <fragment
-        android:id="@+id/chatFragment"
-        android:name="com.example.final_project.screen.ChatFragment"
-        android:label="fragment_chat"
-        tools:layout="@layout/fragment_chat" />
-    <fragment
         android:id="@+id/historyFragment"
-        android:name="com.example.final_project.screen.HistoryFragment"
+        android:name="com.example.final_project.domain.transaction.fragment.HistoryFragment"
         android:label="fragment_history"
         tools:layout="@layout/fragment_history" />
     <fragment

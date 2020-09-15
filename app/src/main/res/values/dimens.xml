@@ -6,4 +6,5 @@
     <dimen name="loginViewsMargin">20dp</dimen>
     <dimen name="forgotPasswordMargin">50dp</dimen>
     <dimen name="profileTextSize">30sp</dimen>
+    <dimen name="profileUserText">20sp</dimen>
 </resources>
