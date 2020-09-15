@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.model.GlideUrl
 import com.bumptech.glide.load.model.LazyHeaders
@@ -79,6 +81,7 @@ class MontirDetailFragment : Fragment() {
 
         // Button untuk post new transaction ke backend
         order_button_montir_detail.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_to_montir_on_the_way)
             transactionViewModel.PostNewTransaction(
                 Transaction(
                     id_montir = montirId.toString(),

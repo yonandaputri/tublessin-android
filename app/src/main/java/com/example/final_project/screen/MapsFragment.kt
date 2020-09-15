@@ -31,7 +31,7 @@ import java.util.*
 
 class MapsFragment : Fragment(), View.OnClickListener {
 
-    private lateinit var map:GoogleMap
+    private lateinit var map: GoogleMap
     private val userViewModel = UserViewModel()
     private val REQUEST_LOCATION_PERMISSION = 1
     private lateinit var userId: String
@@ -121,11 +121,13 @@ class MapsFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        when(v){
+        when (v) {
             getCurrentLocation -> {
                 map.clear()
                 val userPosition = LatLng(map.myLocation.latitude, map.myLocation.longitude)
-                map.addMarker(MarkerOptions().position(userPosition).title("Marker in User Position"))
+                map.addMarker(
+                    MarkerOptions().position(userPosition).title("Marker in User Position")
+                )
                 map.moveCamera(CameraUpdateFactory.newLatLng(userPosition))
 
                 userViewModel.updateUserLocation(
@@ -156,9 +158,10 @@ class MapsFragment : Fragment(), View.OnClickListener {
                 )
                 Prefs.putDouble("userLocationLatitude", map.myLocation.latitude)
                 Prefs.putDouble("userLocationLongitude", map.myLocation.longitude)
+
                 handler.postDelayed(this, 5000)
             }
         }
-        handler.postDelayed(runnable, 1000)
+        handler.postDelayed(runnable, 7000)
     }
 }

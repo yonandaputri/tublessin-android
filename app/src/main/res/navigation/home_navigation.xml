@@ -6,6 +6,10 @@
     app:startDestination="@id/mapsFragment">
 
     <action
+        android:id="@+id/action_to_montir_on_the_way"
+        app:destination="@id/montirOnTheWayFragment" />
+
+    <action
         android:id="@+id/action_to_chat"
         app:destination="@id/chatFragment" />
     <action
@@ -56,5 +60,10 @@
         android:name="com.example.final_project.screen.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/montirOnTheWayFragment"
+        android:name="com.example.final_project.domain.transaction.fragment.MontirOnTheWayFragment"
+        android:label="fragment_montir_on_the_way"
+        tools:layout="@layout/fragment_montir_on_the_way" />
 
 </navigation>
