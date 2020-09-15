@@ -34,7 +34,7 @@
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:visibility="visible"
-                android:src="@drawable/animated_check"/>
+                android:src="@drawable/tick"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/done_register_button"

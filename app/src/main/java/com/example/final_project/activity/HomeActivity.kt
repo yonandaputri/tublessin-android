@@ -25,12 +25,6 @@ class HomeActivity : AppCompatActivity() {
 //                    this.fragmentManager.popBackStack()
                     true
                 }
-
-                R.id.chat -> {
-                    navController.navigate(R.id.action_to_chat)
-//                    this.fragmentManager.popBackStack()
-                    true
-                }
                 R.id.history -> {
                     navController.navigate(R.id.action_to_history)
 //                    this.fragmentManager.popBackStack()
