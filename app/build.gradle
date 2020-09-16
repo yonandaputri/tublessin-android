@@ -23,6 +23,7 @@ android {
     }
 
     repositories {
+        google()
         jcenter()
         maven { url "https://jitpack.io" }  //Make sure to add this in your project for uCrop
     }
@@ -114,4 +115,7 @@ dependencies {
     // For Pick File and Premission
     implementation 'pub.devrel:easypermissions:1.2.0'
     implementation 'com.github.dhaval2404:imagepicker:1.7.4'
+
+    // Google Oauth2
+    implementation 'com.google.android.gms:play-services-auth:18.1.0'
 }
