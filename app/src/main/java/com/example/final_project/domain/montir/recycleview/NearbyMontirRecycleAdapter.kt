@@ -33,9 +33,14 @@ class NearbyMontirRecycleAdapter(
         holder.lastname.text = listMontir[position].lastname
         holder.status.text = listMontir[position].status.status_activity
 
-        val formatedRating = listMontir[position].rating.average_rating.toFloat().toBigDecimal()
-            .setScale(1, RoundingMode.UP).toString()
-        holder.rating.text = formatedRating
+        var formatedRating = "5.0"
+        if (!listMontir[position].rating.average_rating.isNullOrEmpty()) {
+            formatedRating = listMontir[position].rating.average_rating.toFloat().toBigDecimal()
+                .setScale(1, RoundingMode.UP).toString()
+            holder.rating.text = formatedRating
+        } else {
+            holder.rating.text = formatedRating
+        }
 
         val number = listMontir[position].distance.toFloat() / 1000
         val rounded = number.toBigDecimal().setScale(1, RoundingMode.UP).toDouble()
