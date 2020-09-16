@@ -62,9 +62,13 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.final_project.screen.ProfileFragment"
+        android:name="com.example.final_project.domain.user.fragment.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_updateUserProfileFragment"
+            app:destination="@id/updateUserProfileFragment" />
+    </fragment>
     <fragment
         android:id="@+id/montirOnTheWayFragment"
         android:name="com.example.final_project.domain.transaction.fragment.MontirOnTheWayFragment"
@@ -88,5 +92,10 @@
     <action
         android:id="@+id/action_global_giveMontirRatingFragment"
         app:destination="@id/giveMontirRatingFragment" />
+    <fragment
+        android:id="@+id/updateUserProfileFragment"
+        android:name="com.example.final_project.domain.user.fragment.UpdateUserProfileFragment"
+        android:label="fragment_update_user_profile"
+        tools:layout="@layout/fragment_update_user_profile" />
 
 </navigation>

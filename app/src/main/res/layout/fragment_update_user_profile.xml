@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/update_user_profile_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@color/register_bk_color"
+    android:focusableInTouchMode="true"
+    android:gravity="center"
+    tools:context=".domain.user.fragment.UpdateUserProfileFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    style="@style/viewParent.headerText.NoMode"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text="Update Your Profile"
+                    android:textColor="@color/whiteTextColor" />
+            </RelativeLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@color/whiteTextColor"
+                app:cardCornerRadius="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputFirstName"
+                        style="@style/parent"
+                        android:layout_marginTop="@dimen/loginViewsMargin"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp">
+
+                        <EditText
+                            android:id="@+id/editFirstNameUpdate"
+                            style="@style/modifiedEditText"
+                            android:hint="@string/register_firstname_hint"
+                            android:inputType="textPersonName"
+                            android:maxLines="1"
+                            android:textColor="@android:color/black" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputLastName"
+                        style="@style/parent"
+                        android:layout_marginTop="@dimen/loginViewsMargin"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp">
+
+                        <EditText
+                            android:id="@+id/editLastNameUpdate"
+                            style="@style/modifiedEditText"
+                            android:hint="@string/register_lastname_hint"
+                            android:inputType="textPersonName"
+                            android:maxLines="1"
+                            android:textColor="@android:color/black" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputGender"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/loginViewsMargin"
+                        android:backgroundTint="@color/primaryTextColor"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp">
+
+                        <TextView
+                            style="@style/parent"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="@string/register_gender_hint"
+                            android:textColor="@color/black" />
+
+                        <Spinner
+                            android:id="@+id/editGenderUpdate"
+                            style="@style/parent"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="10dp"
+                            android:entries="@array/gender_arrays"
+                            android:maxLines="1"
+                            android:popupBackground="@color/primaryTextColor"
+                            android:prompt="@string/gender_prompt"
+                            android:textColor="@android:color/black"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputEmail"
+                        style="@style/parent"
+                        android:layout_marginTop="@dimen/loginViewsMargin"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp">
+
+                        <EditText
+                            android:id="@+id/editEmailUpdate"
+                            style="@style/modifiedEditText"
+                            android:hint="@string/register_email_hint"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            android:textColor="@android:color/black" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputMobile"
+                        style="@style/parent"
+                        android:layout_marginTop="@dimen/loginViewsMargin"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusTopStart="10dp">
+
+                        <EditText
+                            android:id="@+id/editMobileUpdate"
+                            style="@style/modifiedEditText"
+                            android:hint="@string/register_phonenumber_hint"
+                            android:inputType="phone"
+                            android:maxLines="1"
+                            android:textColor="@android:color/black" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="30dp"
+                        android:gravity="center">
+
+                        <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+                            android:id="@+id/cancelUpdateProfileButton"
+                            style="@style/cancelButton"
+                            android:layout_width="132dp"
+                            android:layout_height="37dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/loginViewsMargin"
+                            android:layout_marginEnd="5dp"
+                            android:padding="6dp"
+                            android:text="@string/cancel_button_text"
+                            app:color="#FFF"
+                            app:cornerRadius="27dp" />
+
+                        <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+                            android:id="@+id/updateProfileButton"
+                            style="@style/updateButton"
+                            android:layout_width="132dp"
+                            android:layout_height="37dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/loginViewsMargin"
+                            android:padding="6dp"
+                            android:text="@string/update_button_text"
+                            app:color="#FFF"
+                            app:cornerRadius="27dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

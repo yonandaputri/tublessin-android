@@ -53,7 +53,7 @@ class RegisterFragment : Fragment(), View.OnClickListener {
                         profile = UserProfile(
                             firstname = editTextFirstName.text.toString(),
                             lastname = editTextLastName.text.toString(),
-                            gender = editTextGender.text.toString(),
+                            gender = editGender.selectedItem.toString(),
                             phone_number = editTextMobile.text.toString(),
                             email = editTextEmail.text.toString(),
                             location = UserLocation()

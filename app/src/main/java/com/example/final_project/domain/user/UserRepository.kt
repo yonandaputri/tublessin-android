@@ -109,8 +109,8 @@ class UserRepository(val userAPI: UserAPI) {
         })
     }
 
-    fun updateUserProfile(id: String, userProfile: UserProfile) {
-        userAPI.updateUserProfileByID(token, id, userProfile).enqueue(object : Callback<UserResponseMessage> {
+    fun updateUserProfile(id: String, userProfileUpdated: UserProfileUpdated) {
+        userAPI.updateUserProfileByID(token, id, userProfileUpdated).enqueue(object : Callback<UserResponseMessage> {
             override fun onFailure(call: Call<UserResponseMessage>, t: Throwable) {
                 println("UPDATE PROFILE USER FAILED")
                 t.printStackTrace()

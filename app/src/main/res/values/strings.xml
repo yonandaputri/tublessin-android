@@ -18,6 +18,8 @@
     <string name="login_button_text">LOGIN</string>
     <string name="register_button_text">REGISTER</string>
     <string name="done_button_text">DONE</string>
+    <string name="cancel_button_text">CANCEL</string>
+    <string name="update_button_text">UPDATE</string>
 
     <!--Text Montir On The Way-->
     <string name="text_montir_on_the_way">Pesanan Berhasil, Rekan kami akan segera menghubungi Anda</string>
@@ -28,6 +30,13 @@
             @drawable/splash_bg
         </item>
     </style>
+
+    <!--spinner gender-->
+    <string name="gender_prompt">Choose Gender</string>
+    <string-array name="gender_arrays">
+        <item>L</item>
+        <item>P</item>
+    </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

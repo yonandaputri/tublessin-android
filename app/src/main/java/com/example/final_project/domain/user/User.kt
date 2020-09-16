@@ -27,6 +27,15 @@ class UserProfile(
     val location: UserLocation
 )
 
+class UserProfileUpdated(
+    val id: Int = 0,
+    val firstname: String = "",
+    val lastname: String = "",
+    val gender: String = "",
+    val phone_number: String = "",
+    val email: String = ""
+)
+
 class UserLocation(
     val latitude: Double = 0.0000,
     val longitude: Double = 0.0000,

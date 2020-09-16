@@ -30,6 +30,6 @@ interface UserAPI {
     fun updateUserProfileByID(
         @Header("Authorization") token: String,
         @Path("id") id: String,
-        @Body userProfile: UserProfile
+        @Body userProfileUpdated: UserProfileUpdated
     ): Call<UserResponseMessage>
 }

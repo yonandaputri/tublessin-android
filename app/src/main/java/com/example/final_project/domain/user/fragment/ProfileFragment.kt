@@ -1,4 +1,4 @@
-package com.example.final_project.screen
+package com.example.final_project.domain.user.fragment
 
 import android.app.Activity
 import android.content.ContextWrapper
@@ -9,10 +9,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.model.GlideUrl
 import com.bumptech.glide.load.model.LazyHeaders
-
 import com.example.final_project.R
 import com.example.final_project.config.defaultHost
 import com.example.final_project.domain.user.UserViewModel
@@ -32,6 +33,7 @@ class ProfileFragment : Fragment(), View.OnClickListener {
     private val userViewModel = UserViewModel()
     lateinit var imageFileChoosed: MultipartBody.Part
     private lateinit var userId: String
+    lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,6 +50,8 @@ class ProfileFragment : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         logoutClicked.setOnClickListener(this)
+        updateClicked.setOnClickListener(this)
+        navController = Navigation.findNavController(view)
 
         Prefs.Builder()
             .setContext(this.activity)
@@ -122,6 +126,9 @@ class ProfileFragment : Fragment(), View.OnClickListener {
                 Prefs.remove("id")
                 Prefs.remove("token")
                 activity?.finish()
+            }
+            updateClicked -> {
+                navController.navigate(R.id.action_profileFragment_to_updateUserProfileFragment)
             }
         }
     }

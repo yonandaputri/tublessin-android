@@ -9,7 +9,7 @@
     android:background="@color/background_color"
     android:focusableInTouchMode="true"
     android:gravity="center"
-    tools:context=".screen.ProfileFragment">
+    tools:context=".domain.user.fragment.ProfileFragment">
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -68,16 +68,29 @@
                     app:layout_constraintTop_toTopOf="parent" />
             </com.google.android.material.card.MaterialCardView>
 
-            <TextView
-                android:id="@+id/text_profile"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:orientation="horizontal"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="16dp"
-                android:fontFamily="sans-serif-black"
-                android:text="Profile"
-                android:textColor= "@color/black"
-                android:textSize="@dimen/profileTextSize"/>
+                android:layout_marginTop="16dp">
+                <TextView
+                    android:id="@+id/text_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Profile"
+                    android:textColor= "@color/black"
+                    android:textSize="@dimen/profileTextSize"/>
+
+                <ImageView
+                    android:id="@+id/updateClicked"
+                    android:layout_width="30dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/ic_baseline_edit_24"/>
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"

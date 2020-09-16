@@ -92,19 +92,35 @@
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/textInputGender"
-                        style="@style/parent"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/loginViewsMargin"
+                        android:backgroundTint="@color/primaryTextColor"
                         app:boxCornerRadiusBottomEnd="10dp"
                         app:boxCornerRadiusBottomStart="10dp"
                         app:boxCornerRadiusTopEnd="10dp"
                         app:boxCornerRadiusTopStart="10dp">
 
-                        <EditText
-                            android:id="@+id/editTextGender"
-                            style="@style/modifiedEditText"
-                            android:hint="@string/register_gender_hint"
-                            android:textColor="@android:color/black"
-                            android:maxLines="1" />
+                        <TextView
+                            style="@style/parent"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="@string/register_gender_hint"
+                            android:textColor="@color/black" />
+
+                        <Spinner
+                            android:id="@+id/editGender"
+                            style="@style/parent"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="10dp"
+                            android:entries="@array/gender_arrays"
+                            android:maxLines="1"
+                            android:popupBackground="@color/primaryTextColor"
+                            android:prompt="@string/gender_prompt"
+                            android:textColor="@android:color/black"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -180,7 +196,7 @@
 
                     <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
                         android:id="@+id/cirRegisterButton"
-                        style="@style/loginButton"
+                        style="@style/registerButton"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="@dimen/loginViewsMargin"
                         android:text="@string/register_button_text"

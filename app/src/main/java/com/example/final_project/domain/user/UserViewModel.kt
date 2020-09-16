@@ -31,7 +31,7 @@ class UserViewModel : ViewModel() {
         userRepository.updateUserLocation(id, userLocation)
     }
 
-    fun updateUserProfile(id: String, userProfile: UserProfile) {
-        userRepository.updateUserProfile(id, userProfile)
+    fun updateUserProfile(id: String, userProfileUpdated: UserProfileUpdated) {
+        userRepository.updateUserProfile(id, userProfileUpdated)
     }
 }
