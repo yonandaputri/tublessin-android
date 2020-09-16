@@ -19,7 +19,15 @@
     <string name="register_button_text">REGISTER</string>
     <string name="done_button_text">DONE</string>
 
+    <!--Text Montir On The Way-->
     <string name="text_montir_on_the_way">Pesanan Berhasil, Rekan kami akan segera menghubungi Anda</string>
+
+    <!--Splash Screen-->
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">
+            @drawable/splash_bg
+        </item>
+    </style>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
