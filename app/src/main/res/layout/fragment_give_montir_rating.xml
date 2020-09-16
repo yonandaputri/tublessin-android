@@ -214,6 +214,7 @@
                     android:scrollbarStyle="insideInset"
                     android:scrollbars="horizontal"
                     android:singleLine="false"
+                    android:gravity="top"
                     android:textColor="@android:color/black"
                     android:textSize="14sp"
                     android:visibility="visible" />

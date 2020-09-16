@@ -119,6 +119,8 @@ class ProfileFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v) {
             logoutClicked -> {
+                Prefs.remove("id")
+                Prefs.remove("token")
                 activity?.finish()
             }
         }
