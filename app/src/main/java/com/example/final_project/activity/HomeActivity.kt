@@ -22,10 +22,15 @@ import kotlinx.android.synthetic.main.fragment_montir_detail.*
 class HomeActivity : AppCompatActivity() {
     lateinit var navController: NavController
     private val transactionViewModel = TransactionViewModel()
+    private lateinit var userId: String
+    private lateinit var montirId: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+        userId = Prefs.getString("id", "0")
+        montirId = Prefs.getString("montirId", "0")
 
         navController = (home_nav_fragment as NavHostFragment).navController
         NavigationUI.setupWithNavController(bottom_navigation, navController)
@@ -36,12 +41,16 @@ class HomeActivity : AppCompatActivity() {
                     navController.navigate(R.id.action_to_maps) // masuk maps
                     true
                 }
+                R.id.chat -> {
+                    navController.navigate(R.id.action_to_chat) // masuk chat
+                    true
+                }
                 R.id.history -> {
-                    navController.navigate(R.id.action_to_history)
+                    navController.navigate(R.id.action_to_history) // masuk history
                     true
                 }
                 R.id.profile -> {
-                    navController.navigate(R.id.action_to_profile)
+                    navController.navigate(R.id.action_to_profile) // masuk profile
                     true
                 }
                 else -> {
