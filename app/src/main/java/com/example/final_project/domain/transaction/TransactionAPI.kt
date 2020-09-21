@@ -21,6 +21,7 @@ interface TransactionAPI {
 
     @POST("transaction/update/status/{id}")
     fun UpdateStatusTransaction(
+        @Body transaction: Transaction,
         @Path("id") id: String,
         @Header("Authorization") token: String
     ): Call<TransactionResponeMessage>

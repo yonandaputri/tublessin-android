@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
@@ -27,6 +28,7 @@ class MontirDetailFragment : Fragment() {
     val montirViewModel by activityViewModels<MontirViewModel>()
     val transactionViewModel by activityViewModels<TransactionViewModel>()
     val userViewModel by activityViewModels<UserViewModel>()
+    var transactionId = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -82,8 +84,11 @@ class MontirDetailFragment : Fragment() {
         // Button untuk post new transaction ke backend
         order_button_montir_detail.setOnClickListener {
             Prefs.putBoolean("statusOrderan", true) // status orderan true
-            Navigation.findNavController(it).navigate(R.id.action_montirDetailFragment_pop)
-            Navigation.findNavController(it).navigate(R.id.action_to_montir_on_the_way)
+            order_button_montir_detail.isVisible = false
+            cancel_button_montir_detail.isVisible = true
+            chat_button_montir_detail.isVisible = true
+//            Navigation.findNavController(it).navigate(R.id.action_montirDetailFragment_pop)
+//            Navigation.findNavController(it).navigate(R.id.action_to_montir_on_the_way)
             transactionViewModel.PostNewTransaction(
                 Transaction(
                     id_montir = montirId.toString(),
@@ -97,11 +102,29 @@ class MontirDetailFragment : Fragment() {
             )
         }
 
+        cancel_button_montir_detail.setOnClickListener {
+            transactionViewModel.UpdateStatusTransaction(
+                Transaction(
+                    status = "3",
+                    location = TransactionLocation()
+                ), transactionId
+            )
+            Prefs.putBoolean("statusOrderan", false) // status orderan true
+            order_button_montir_detail.isVisible = true
+            cancel_button_montir_detail.isVisible = false
+            chat_button_montir_detail.isVisible = false
+            Navigation.findNavController(it).navigate(R.id.action_montirDetailFragment_pop)
+            Navigation.findNavController(it).navigate(R.id.action_to_maps)
+        }
+
+        chat_button_montir_detail.setOnClickListener { }
+
         transactionViewModel.transactionList().observe(viewLifecycleOwner, Observer {
             println("=========================================================")
             println(it.Message)
             println(it.Code)
             println(it.Status)
+            transactionId = it.Results.result.id
             println(it.Results.result.id)
             println(it.Results.result.id_user)
             println("=========================================================")
