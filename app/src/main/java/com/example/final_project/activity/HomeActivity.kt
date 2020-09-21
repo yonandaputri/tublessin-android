@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.util.AttributeSet
 import android.view.View
+import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -16,6 +17,7 @@ import com.example.final_project.domain.transaction.TransactionViewModel
 import com.pixplicity.easyprefs.library.Prefs
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.fragment_maps.*
+import kotlinx.android.synthetic.main.fragment_montir_detail.*
 
 class HomeActivity : AppCompatActivity() {
     lateinit var navController: NavController
@@ -56,7 +58,7 @@ class HomeActivity : AppCompatActivity() {
                 // statusOrderan nya true yang artinya sebelumnya lagi sedang ada orderan
                 // Prefs.getBoolean("statusOrderan", false) <- dilakukan biar pas awal login ngga langsung
                 // munculin fragment review
-                if (it.Results.results[0].status != "On Process" && Prefs.getBoolean(
+                if (it.Results.results[0].status == "Success" && Prefs.getBoolean(
                         "statusOrderan",
                         false
                     )
@@ -68,6 +70,22 @@ class HomeActivity : AppCompatActivity() {
                 } else if (it.Results.results[0].status == "On Process") {
                     // Ada orderan yang sedang berjalan
                     Prefs.putBoolean("statusOrderan", true) // status orderan true
+                } else if (it.Results.results[0].status == "Canceled" && Prefs.getBoolean(
+                        "statusOrderan",
+                        false
+                    )
+                ) {
+                    // Orderan Selesai
+                    Prefs.putBoolean("statusOrderan", false) // ubah status orderan jadi false
+                    Prefs.putString("finishedOrderMontirId", it.Results.results[0].id_montir)
+                    order_button_montir_detail.isVisible = true
+                    cancel_button_montir_detail.isVisible = false
+                    chat_button_montir_detail.isVisible = false
+                    navController.navigate(R.id.action_to_maps)
+//                    Navigation.findNavController(view)
+//                        .navigate(R.id.action_montirDetailFragment_pop)
+//                    Navigation.findNavController(view).navigate(R.id.action_to_maps)
+
                 }
             }
         })

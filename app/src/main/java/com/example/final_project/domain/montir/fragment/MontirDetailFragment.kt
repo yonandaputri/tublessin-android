@@ -2,6 +2,7 @@ package com.example.final_project.domain.montir.fragment
 
 import android.content.ContextWrapper
 import android.os.Bundle
+import android.os.Handler
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -117,7 +118,8 @@ class MontirDetailFragment : Fragment() {
             Navigation.findNavController(it).navigate(R.id.action_to_maps)
         }
 
-        chat_button_montir_detail.setOnClickListener { }
+        chat_button_montir_detail.setOnClickListener {
+        }
 
         transactionViewModel.transactionList().observe(viewLifecycleOwner, Observer {
             println("=========================================================")

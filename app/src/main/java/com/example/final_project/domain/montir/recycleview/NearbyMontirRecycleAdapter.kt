@@ -44,7 +44,7 @@ class NearbyMontirRecycleAdapter(
 
         val number = listMontir[position].distance.toFloat() / 1000
         val rounded = number.toBigDecimal().setScale(1, RoundingMode.UP).toDouble()
-        holder.distance.text = "${rounded} Km"
+        holder.distance.text = "$rounded"
 
         val url = "${defaultHost()}montir/file/image/${listMontir[position].imageUrl}"
         val glideUrl = GlideUrl(
