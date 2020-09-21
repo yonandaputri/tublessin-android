@@ -13,8 +13,8 @@ class TransactionRepository(val transactionAPI: TransactionAPI) {
     val transactionLiveData = MutableLiveData<TransactionResponeMessage>()
     val token = "Bearer ${Prefs.getString("token", "0")}"
 
-    fun UpdateStatusTransaction(transactionId: String) {
-        transactionAPI.UpdateStatusTransaction(transactionId, token)
+    fun UpdateStatusTransaction(statusTransaction:Transaction, transactionId: String) {
+        transactionAPI.UpdateStatusTransaction(statusTransaction,transactionId, token)
             .enqueue(object : Callback<TransactionResponeMessage> {
                 override fun onResponse(
                     call: Call<TransactionResponeMessage>,

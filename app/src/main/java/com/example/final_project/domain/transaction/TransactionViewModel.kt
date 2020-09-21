@@ -13,11 +13,14 @@ class TransactionViewModel : ViewModel() {
         )
     )
 
-    fun transactionList() = transactionRepository.transactionLiveData as LiveData<TransactionResponeMessage>
+    fun transactionList() =
+        transactionRepository.transactionLiveData as LiveData<TransactionResponeMessage>
 
-    fun RequestUserTransactionList(userid:String) = transactionRepository.GetUserTransactionList(userid)
+    fun RequestUserTransactionList(userid: String) =
+        transactionRepository.GetUserTransactionList(userid)
 
-    fun UpdateStatusTransaction(transactionId:String) = transactionRepository.UpdateStatusTransaction(transactionId)
+    fun UpdateStatusTransaction(statusTransaction: Transaction, transactionId: String) =
+        transactionRepository.UpdateStatusTransaction(statusTransaction, transactionId)
 
     fun PostNewTransaction(transaction: Transaction) =
         transactionRepository.PostNewTransaction(transaction)

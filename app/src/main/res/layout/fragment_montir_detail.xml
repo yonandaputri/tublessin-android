@@ -100,6 +100,32 @@
                 android:layout_marginBottom="50dp"
                 android:backgroundTint="@color/themeColor"
                 android:text="Order" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/cancel_button_montir_detail"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#E34040"
+                    android:text="Cancel"
+                    android:visibility="invisible"
+                    app:iconTint="#C52525"
+                    app:rippleColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/chat_button_montir_detail"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:backgroundTint="#4CAF50"
+                    android:text="Chat"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
