@@ -29,7 +29,7 @@ class MontirDetailFragment : Fragment() {
     val montirViewModel by activityViewModels<MontirViewModel>()
     val transactionViewModel by activityViewModels<TransactionViewModel>()
     val userViewModel by activityViewModels<UserViewModel>()
-    var transactionId = ""
+    var transactionId:String? = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -108,7 +108,7 @@ class MontirDetailFragment : Fragment() {
                 Transaction(
                     status = "3",
                     location = TransactionLocation()
-                ), transactionId
+                ), transactionId?:"0"
             )
             Prefs.putBoolean("statusOrderan", false) // status orderan true
             order_button_montir_detail.isVisible = true
@@ -122,14 +122,7 @@ class MontirDetailFragment : Fragment() {
         }
 
         transactionViewModel.transactionList().observe(viewLifecycleOwner, Observer {
-            println("=========================================================")
-            println(it.Message)
-            println(it.Code)
-            println(it.Status)
-            transactionId = it.Results.result.id
-            println(it.Results.result.id)
-            println(it.Results.result.id_user)
-            println("=========================================================")
+            transactionId = it.Results?.result?.id
         })
     }
 
