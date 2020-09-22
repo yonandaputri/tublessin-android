@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:paddingTop="8dp">
 
     <TextView
@@ -59,8 +59,8 @@
         android:id="@+id/text_message_name2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="8dp"
         android:layout_marginTop="4dp"
+        android:layout_marginRight="8dp"
         android:text="John Doe"
         android:textSize="12sp"
         app:layout_constraintRight_toLeftOf="@+id/image_message_profile2"
@@ -70,8 +70,8 @@
         android:id="@+id/text_message_body"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="8dp"
         android:layout_marginTop="4dp"
+        android:layout_marginRight="8dp"
         android:background="@drawable/rounded_rectangle_gray"
         android:maxWidth="240dp"
         android:padding="8dp"
@@ -99,8 +99,8 @@
         android:id="@+id/text_message_time2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="44dp"
         android:layout_marginTop="4dp"
+        android:layout_marginEnd="44dp"
         android:text="11:40"
         android:textColor="@color/black"
         android:textSize="10sp"

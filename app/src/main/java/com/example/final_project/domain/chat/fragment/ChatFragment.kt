@@ -38,7 +38,7 @@ class ChatFragment : Fragment(), View.OnClickListener {
         button_chatbox_send.setOnClickListener(this)
 
         userId = Prefs.getString("id", "0")
-        montirId = Prefs.getString("montirId", "0")
+        montirId = Prefs.getString("selectedMontirId", "0")
         println("userId pas chat : ${userId}")
         println("montirId pas chat : ${montirId}")
 

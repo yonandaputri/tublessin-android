@@ -32,7 +32,15 @@ class ChatRecycleViewAdapter(private val messageList: List<Conversation>) :
             holder.imageUser.isVisible = true
             holder.senderId.text = messageList[position].sender_id
             holder.dateSender.text = messageList[position].date_created
+
+            holder.messageMontir.isVisible = false
+            holder.imageMontir.isVisible = false
+
+
         } else {
+            holder.messageUser.isVisible = false
+            holder.imageUser.isVisible = false
+
             holder.messageMontir.isVisible = true
             holder.messageMontir.text = messageList[position].message
             holder.imageMontir.isVisible = true
