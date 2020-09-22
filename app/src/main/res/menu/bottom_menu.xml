@@ -6,11 +6,6 @@
         android:icon="@drawable/ic_location"
         android:title="Maps" />
     <item
-        android:id="@+id/chat"
-        android:enabled="true"
-        android:icon="@drawable/ic_chat"
-        android:title="Chat" />
-    <item
         android:id="@+id/history"
         android:enabled="true"
         android:icon="@drawable/ic_history"

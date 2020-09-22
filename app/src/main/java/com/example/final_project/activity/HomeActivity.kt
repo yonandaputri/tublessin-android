@@ -41,10 +41,6 @@ class HomeActivity : AppCompatActivity() {
                     navController.navigate(R.id.action_to_maps) // masuk maps
                     true
                 }
-                R.id.chat -> {
-                    navController.navigate(R.id.action_to_chat) // masuk chat
-                    true
-                }
                 R.id.history -> {
                     navController.navigate(R.id.action_to_history) // masuk history
                     true

@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
@@ -119,6 +120,7 @@ class MontirDetailFragment : Fragment() {
         }
 
         chat_button_montir_detail.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_montirDetailFragment_to_chatFragment)
         }
 
         transactionViewModel.transactionList().observe(viewLifecycleOwner, Observer {

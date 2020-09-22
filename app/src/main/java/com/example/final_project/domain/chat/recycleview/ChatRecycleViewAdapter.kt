@@ -45,12 +45,12 @@ class ChatRecycleViewAdapter(private val messageList: List<Conversation>) :
 
 
 class ChatViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-    val imageUser = view.findViewById<ImageView>(R.id.image_message_profile)
-    val imageMontir = view.findViewById<ImageView>(R.id.image_message_profile2)
+    val imageUser = view.findViewById<ImageView>(R.id.image_message_profile2)
+    val imageMontir = view.findViewById<ImageView>(R.id.image_message_profile)
     val messageUser = view.findViewById<TextView>(R.id.text_message_body)
     val messageMontir = view.findViewById<TextView>(R.id.text_message_body2)
     val senderId = view.findViewById<TextView>(R.id.text_message_name)
     val receiverId = view.findViewById<TextView>(R.id.text_message_name2)
-    val dateSender = view.findViewById<TextView>(R.id.text_message_time)
-    val dateReceiver = view.findViewById<TextView>(R.id.text_message_time2)
+    val dateSender = view.findViewById<TextView>(R.id.text_message_time2)
+    val dateReceiver = view.findViewById<TextView>(R.id.text_message_time)
 }

@@ -13,9 +13,6 @@
         android:id="@+id/action_to_maps"
         app:destination="@id/mapsFragment" />
     <action
-        android:id="@+id/action_to_chat"
-        app:destination="@id/chatFragment" />
-    <action
         android:id="@+id/action_to_history"
         app:destination="@id/historyFragment" />
     <action
@@ -62,6 +59,9 @@
             android:id="@+id/action_montirDetailFragment_pop"
             app:popUpTo="@id/montirDetailFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_montirDetailFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
